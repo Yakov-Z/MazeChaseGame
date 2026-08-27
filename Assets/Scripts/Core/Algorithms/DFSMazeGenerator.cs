@@ -41,12 +41,12 @@ public class DFSMazeGenerator : IMazeGenerator
                 curNode.hasRightWall = false;
                 digNeighbor.hasLeftWall = false;
             }               
-            else if(digNeighbor.Y < curNode.Y)
+            else if(digNeighbor.Y > curNode.Y)
             {
                 curNode.hasTopWall = false;
                 digNeighbor.hasBottomWall = false;
             }                
-            else if(digNeighbor.Y > curNode.Y)
+            else if(digNeighbor.Y < curNode.Y)
             {
                 curNode.hasBottomWall = false;
                 digNeighbor.hasTopWall = false;
