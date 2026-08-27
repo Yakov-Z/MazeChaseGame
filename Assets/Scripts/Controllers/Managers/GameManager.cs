@@ -40,4 +40,9 @@ public class GameManager : MonoBehaviour
         // Reload the current active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void MainMenu()
+    {    
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
 }

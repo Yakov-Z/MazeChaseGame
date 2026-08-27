@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MazeManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MazeManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     public GameObject exitPointPrefab;
+    // public GameObject background;
     private float cellSize;
 
     public void Start()
@@ -23,10 +25,11 @@ public class MazeManager : MonoBehaviour
         mazeVisualizer.DrawMaze(maze);
         SpawnCharacters(maze);
 
-        float centerX = (width - 1) / 2f * mazeVisualizer.cellSize;
-        float centerY = (height - 1) / 2f * mazeVisualizer.cellSize;
+        float centerX = (width - 1) / 2f * cellSize;
+        float centerY = (height - 1) / 2f * cellSize;
 
         Camera.main.transform.position = new Vector3(centerX,centerY,-10f);
+        // background.transform.position = new Vector3(centerX,centerY,0);
     }
 
     private void SpawnCharacters(MazeGrid maze)
@@ -48,5 +51,10 @@ public class MazeManager : MonoBehaviour
 
         Vector3 exitPos = new Vector3(endX * cellSize, 0, 0);
         Instantiate(exitPointPrefab, exitPos, Quaternion.identity);
+
+        float centerX = (width - 1) / 2f * cellSize;
+        float centerY = (height - 1) / 2f * cellSize;
+        // Vector3 backgroundPos = new Vector3(centerX, centerY, 0);
+        // Instantiate(background, backgroundPos, Quaternion.identity);
     }
 }
