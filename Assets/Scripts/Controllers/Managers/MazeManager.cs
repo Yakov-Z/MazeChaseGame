@@ -10,6 +10,7 @@ public class MazeManager : MonoBehaviour
 
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+    public GameObject exitPointPrefab;
     private float cellSize;
 
     public void Start()
@@ -44,5 +45,8 @@ public class MazeManager : MonoBehaviour
         {
             enemyBrain.Init(maze, playerObj.transform, cellSize);
         }
+
+        Vector3 exitPos = new Vector3(endX * cellSize, 0, 0);
+        Instantiate(exitPointPrefab, exitPos, Quaternion.identity);
     }
 }
