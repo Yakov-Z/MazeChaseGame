@@ -1,8 +1,11 @@
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed=5f;
+    public static event Action OnPlayerCaught;
+    public static event Action OnExitReached;
     
     private Rigidbody2D rb;
     
@@ -25,5 +28,13 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()
     {
         rb.velocity = input * speed;    
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<EnemyController>() != null)
+            OnPlayerCaught?.Invoke();
+        else if (collision.GetComponent<ExitPoint>() != null)
+            OnExitReached?.Invoke();
     }
 }
