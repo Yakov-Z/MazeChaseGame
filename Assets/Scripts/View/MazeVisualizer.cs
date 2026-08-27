@@ -16,7 +16,7 @@ public class MazeVisualizer : MonoBehaviour
                 MazeNode node = grid.GetNode(x, y);
                 
                 // Calculate the world position for this cell
-                Vector3 position = new Vector3(x * cellSize, 0, y * cellSize);
+                Vector3 position = new Vector3(x * cellSize, y * cellSize, 0);
 
                 // Instantiate the floor tile
                 Instantiate(floorPrefab, position, Quaternion.identity, transform);
@@ -24,21 +24,20 @@ public class MazeVisualizer : MonoBehaviour
                 // Calculate half size for wall offsets
                 float offset = cellSize / 2f;
 
-                // Top wall
                 if (node.hasTopWall)
-                    Instantiate(wallPrefab, position + new Vector3(0, 0, offset), Quaternion.identity, transform);
-                
+                    Instantiate(wallPrefab, position + new Vector3(0, offset, 0), Quaternion.identity, transform);
+
                 // Bottom wall
                 if (node.hasBottomWall)
-                    Instantiate(wallPrefab, position + new Vector3(0, 0, -offset), Quaternion.identity, transform);
+                    Instantiate(wallPrefab, position + new Vector3(0, -offset, 0), Quaternion.identity, transform);
 
                 // Right wall (Rotated 90 degrees)
                 if (node.hasRightWall)
-                    Instantiate(wallPrefab, position + new Vector3(offset, 0, 0), Quaternion.Euler(0, 90, 0), transform);
+                    Instantiate(wallPrefab, position + new Vector3(offset, 0, 0), Quaternion.Euler(0, 0, 90), transform);
 
                 // Left wall (Rotated 90 degrees)
                 if (node.hasLeftWall)
-                    Instantiate(wallPrefab, position + new Vector3(-offset, 0, 0), Quaternion.Euler(0, 90, 0), transform);
+                    Instantiate(wallPrefab, position + new Vector3(-offset, 0, 0), Quaternion.Euler(0, 0, 90), transform);
             }
         }
     }
