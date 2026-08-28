@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [Header("UI Panels")]
+    [SerializeField] private GameObject leaderboardPanel;
     // Loads the main game scene when the Play button is clicked
     public void StartGame()
     {
@@ -14,5 +16,13 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+    public void accessLeaderboard()
+    {
+        leaderboardPanel.SetActive(true);
+    }
+    public void exitLeaderboard()
+    {
+        leaderboardPanel.SetActive(false);
     }
 }
