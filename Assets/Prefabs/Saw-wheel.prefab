@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1308111766102044822}
   - component: {fileID: 5719643036589312024}
   - component: {fileID: 4792515751526468198}
-  m_Layer: 0
+  - component: {fileID: 3945110531866797701}
+  m_Layer: 7
   m_Name: Saw-wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,9 +178,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15057878}
+  m_Offset: {x: 0.04924968, y: 0.15057878}
   serializedVersion: 2
-  m_Radius: 2.228611
+  m_Radius: 2.7309568
 --- !u!114 &4792515751526468198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +194,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: -360
+--- !u!58 &3945110531866797701
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076334901848515493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 017ea24add47fdc4f989751ca627086c, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009845763, y: 0.10834903}
+  serializedVersion: 2
+  m_Radius: 2.1960075
