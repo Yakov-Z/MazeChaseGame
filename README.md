@@ -2,6 +2,8 @@
 
 🎮 **Play the game instantly in your browser:** [Play Maze Chase on Itch.io](https://yaakov0864.itch.io/maze-chase)
 
+<img width="1276" height="717" alt="animation" src="https://github.com/user-attachments/assets/1418d516-634a-43a4-b101-ff25298eaf2d" />
+
 ## Overview
 A fast-paced 2D survival game where players navigate a dynamically generated maze while evading a relentless AI enemy. Built with Unity, the game leverages classic graph algorithms (DFS for procedural generation, BFS for pathfinding) to ensure every run provides a unique and challenging experience.
 
