@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviour
     [Header("UI Panels")]
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject InstructionsPanel;
     [Header("Managers")]
     [SerializeField] private TimerController timerController;
     [SerializeField] private LeaderboardManager leaderboardManager;
     [SerializeField] private TextMeshProUGUI victoryTimeText;
     private void OnEnable()
     {
+        Time.timeScale = 0f;
         // Subscribe to the events
         PlayerController.OnPlayerCaught += GameOver;
         PlayerController.OnExitReached += Victory;
@@ -63,5 +65,10 @@ public class GameManager : MonoBehaviour
     {    
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+    public void disableInstructions()
+    {    
+        InstructionsPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
